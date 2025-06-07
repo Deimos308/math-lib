@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_MAJOR }}
           registry-url: "https://npm.pkg.github.com/"
+          scope: "@deimos308"
 
       - run: pnpm install
 
