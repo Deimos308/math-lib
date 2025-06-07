@@ -9,7 +9,12 @@
   "repository": {
     "url": "git://github.com/Deimos308/math-lib.git"
   },
+  "files": [
+    "build",
+    "types"
+  ],
   "scripts": {
+    "prepack": "tsc",
     "build": "npx tsc"
   },
   "devDependencies": {
