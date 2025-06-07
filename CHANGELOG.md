@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/Deimos308/math-lib/compare/v1.0.0...v1.1.0) (2025-06-07)
+
+### Features
+
+* add Prettier configuration file for code formatting ([df5a3d4](https://github.com/Deimos308/math-lib/commit/df5a3d4e6c4f69c6c500465de6f8e237a231b962))
+
 ## 1.0.0 (2025-06-07)
 
 ### Features
