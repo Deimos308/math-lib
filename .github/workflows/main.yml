@@ -1,0 +1,35 @@
+name: Node.js Private Package
+
+env:
+  NODE_MAJOR: 22 # change in one place
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js v${{ env.NODE_MAJOR }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_MAJOR }}
+          registry-url: "https://npm.pkg.github.com/"
+
+      - run: pnpm install
+      - run: pnpm run build
+
+      - run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
