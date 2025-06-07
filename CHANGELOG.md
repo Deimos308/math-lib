@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/Deimos308/math-lib/compare/v1.1.0...v1.1.1) (2025-06-07)
+
+### Bug Fixes
+
+* update permissions and formatting in release workflow ([5f68687](https://github.com/Deimos308/math-lib/commit/5f68687d949906d29dd3364d3ed54e4985566597))
+
 ## [1.1.0](https://github.com/Deimos308/math-lib/compare/v1.0.0...v1.1.0) (2025-06-07)
 
 ### Features
