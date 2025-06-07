@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ env.NODE_MAJOR }}
           registry-url: "https://npm.pkg.github.com/"
 
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install
 
       - run: pnpm publish
         env:
