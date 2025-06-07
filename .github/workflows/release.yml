@@ -9,8 +9,11 @@ on:
       - master
 
 permissions:
-  contents: write
-  packages: write
+  contents: write # commit CHANGELOG + tag
+  packages: write # publish to GH Packages
+  issues: write # leave "🎉 this PR was released …" comments
+  pull-requests: write # label / comment PRs
+  statuses: write # set the commit status ✔︎ released
 
 jobs:
   publish-gpr:
@@ -27,8 +30,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_MAJOR }}
-          registry-url: "https://npm.pkg.github.com/"
-          scope: "@deimos308"
+          registry-url: 'https://npm.pkg.github.com/'
+          scope: '@deimos308'
           always-auth: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
