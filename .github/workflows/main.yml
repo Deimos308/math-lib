@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
@@ -26,7 +30,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com/"
           scope: "@deimos308"
           always-auth: true
-          token: ${{ secrets.PACKAGE_ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: pnpm install
         env:
