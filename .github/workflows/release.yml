@@ -1,4 +1,4 @@
-name: Node.js Private Package
+name: Release
 
 env:
   NODE_MAJOR: 22 # change in one place
@@ -9,7 +9,7 @@ on:
       - master
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 jobs:
@@ -36,6 +36,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: pnpm publish
+      - run: pnpx semantic-release
         env:
+          # GH_TOKEN is what semantic-release uses to push commits, create tags
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # npm still needs the auth token for `npm publish`
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
